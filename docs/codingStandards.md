@@ -90,7 +90,6 @@ src/
 
 El stack oficial del proyecto está fijado. No se deben añadir librerías adicionales para resolver tareas cubiertas por el stack base sin la aprobación previa del equipo.
 
-* **Lenguaje:** TypeScript.
 * **Lenguaje:** TypeScript
 * **Entorno / Bundler:** Vite.
 * **Consumo de APIs:** Axios.
@@ -114,7 +113,6 @@ Para mantener una capa de red desacoplada, limpia y mantenible, se imponen las s
 
 
 2. **Capa de Servicios Dedicada:**
-* Las peticiones HTTP deben agruparse por dominio en archivos de servicio dentro de `src/services/` (ej. `workoutService.js`, `authService.js`).
 * Las peticiones HTTP deben agruparse por dominio en archivos de servicio dentro de `src/services/` (ej. `workoutService.js`, `authService.js`).
 * Los componentes de UI únicamente deben llamar a estas funciones de servicio y gestionar el estado visual.
 
