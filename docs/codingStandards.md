@@ -26,7 +26,7 @@ src/
 │   └── icons.svg
 ├── src/
 │   ├── assets/
-│   │   └── img/           # Imágenes y texturas (stone.jpg, parchment.jpg, banner.png, lantern.png, seal.png, market.jpg)
+│   │   └── img/           # Imágenes y texturas (stone.jpg, parchment.jpg, banner.png, market.jpg)
 │   ├── components/
 │   │   ├── Header/        # Componente Header (Navegación)
 │   │   └── Footer/        # Pie de página
@@ -59,7 +59,6 @@ src/
 * Usa nombres precisos para funciones y variables en inglés (ej. `fetchUserProfile` en lugar de `getData`, `isUserLoggedIn` en lugar de `flag`).
 * Evita abreviaturas confusas (ej. `productIndex` en lugar de `idx` o `p`).
 
-
 * **Manejo de condicionales:** Prioriza retornos tempranos (*early returns*) y guardas (*guard clauses*) para evitar anidamientos profundos de estructuras `if-else`.
 * **Código muerto y variables sin usar:** Queda totalmente prohibido dejar código comentado, funciones no utilizadas o importaciones no requeridas en los archivos entregados.
 
@@ -73,10 +72,8 @@ src/
 
 2. **Estilos Específicos:**
 * Cada componente o página que requiera estilos propios tendrá su propia hoja de estilos `.css` dentro de su carpeta correspondiente.
-* El archivo `.css` debe tener **exactamente el mismo nombre** que el archivo `.jsx` al que acompaña (en PascalCase).
+* El archivo `.css` debe tener **exactamente el mismo nombre** que el archivo `.tsx` al que acompaña (en PascalCase).
 * **Regla de encapsulamiento:** Usa clases específicas o módulos CSS para evitar que los estilos de un componente afecten accidentalmente a otros.
-
-
 
 ---
 
@@ -93,7 +90,7 @@ src/
 
 El stack oficial del proyecto está fijado. No se deben añadir librerías adicionales para resolver tareas cubiertas por el stack base sin la aprobación previa del equipo.
 
-* **Lenguaje:** JavaScript (ES6+).
+* **Lenguaje:** TypeScript
 * **Entorno / Bundler:** Vite.
 * **Consumo de APIs:** Axios.
 * **Linter y Calidad:** ESLint (debe ejecutarse sin errores antes de cada subida a producción o PR).
@@ -116,7 +113,7 @@ Para mantener una capa de red desacoplada, limpia y mantenible, se imponen las s
 
 
 2. **Capa de Servicios Dedicada:**
-* Las peticiones HTTP deben agruparse por dominio en archivos de servicio dentro de `src/services/` (ej. `productService.js`, `authService.js`).
+* Las peticiones HTTP deben agruparse por dominio en archivos de servicio dentro de `src/services/` (ej. `workoutService.js`, `authService.js`).
 * Los componentes de UI únicamente deben llamar a estas funciones de servicio y gestionar el estado visual.
 
 
@@ -133,7 +130,7 @@ Para mantener una capa de red desacoplada, limpia y mantenible, se imponen las s
 * Los errores devueltos por la API deben ser transformados y devueltos de forma clara para mostrar retroalimentación en español al usuario.
 
 
-5. **Interceptores de Axios y Integración con React Router DOM:**
+5. **Interceptores de Axios e Integración con React Router DOM:**
 * Usar un *request interceptor* para inyectar automáticamente el token de autenticación (`Bearer token`) en las peticiones que lo requieran.
 * Usar un *response interceptor* para la captura global de errores HTTP. Ante respuestas de estado `401 Unauthorized` o `403 Forbidden`, se debe redirigir al usuario automáticamente a la ruta `/login` usando la configuración de navegación.
 
@@ -145,7 +142,7 @@ Para mantener una capa de red desacoplada, limpia y mantenible, se imponen las s
 
 ## 8. Accesibilidad Web (WCAG Compliance)
 
-Es obligatorio construir componentes acordes a las pautas de accesibilidad **WCAG 2.1 (Nivel AA)**:
+Es obligatorio construir componentes acordes a las pautas de accesibilidad **WCAG 2.2 (Nivel AA)**:
 
 1. **Semántica HTML:** Utilizar etiquetas semánticas (`<header>`, `<nav>`, `<main>`, `<article>`, `<button>`, etc.) en lugar de abusar de `<div>`.
 2. **Imágenes:** Todas las etiquetas `<img>` deben llevar el atributo `alt` obligatorio con una descripción clara en español para el usuario (salvo que sea puramente decorativa, en cuyo caso llevará `alt=""`).
