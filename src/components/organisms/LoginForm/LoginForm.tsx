@@ -1,7 +1,7 @@
 import { useState, type SubmitEvent } from 'react'
-import { Button } from '@/components/atoms/Button'
-import { TextLink } from '@/components/atoms/TextLink'
-import { FormField } from '@/components/molecules/FormField'
+import { Button } from '@/components/atoms/Button/Button'
+import { TextLink } from '@/components/atoms/TextLink/TextLink'
+import { FormField } from '@/components/molecules/FormField/FormField'
 import { PATHS } from '@/routes/paths'
 import type { LoginCredentials } from '@/types/auth'
 

@@ -9,4 +9,5 @@ export function Button({ className = '', ...props }: ButtonProps) {
       {...props}
     />
   )
-}
+};
+export default Button; 

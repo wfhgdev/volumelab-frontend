@@ -1,7 +1,7 @@
-import { Logo } from '@/components/atoms/Logo'
-import { TextLink } from '@/components/atoms/TextLink'
-import { LoginForm } from '@/components/organisms/LoginForm'
-import { AuthLayout } from '@/components/templates/AuthLayout'
+import { Logo } from '@/components/atoms/Logo/Logo'
+import { TextLink } from '@/components/atoms/TextLink/TextLink'
+import { LoginForm } from '@/components/organisms/LoginForm/LoginForm'
+import { AuthLayout } from '@/components/templates/AuthLayout/AuthLayout'
 import { useAuth } from '@/hooks/useAuth'
 import { PATHS } from '@/routes/paths'
 

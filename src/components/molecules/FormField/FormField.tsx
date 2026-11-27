@@ -1,5 +1,5 @@
 import type { InputHTMLAttributes } from 'react'
-import { TextField } from '@/components/atoms/TextField'
+import { TextField } from '@/components/atoms/TextField/TextField'
 
 type FormFieldProps = InputHTMLAttributes<HTMLInputElement> & {
   id: string
