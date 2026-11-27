@@ -1,14 +1,20 @@
 import { useState } from 'react'
-import './App.css'
+import { AppRouter } from '@/routes/router'
+import { AUTH_TOKEN_KEY } from '@/services/api'
+
+function hasStoredToken(): boolean {
+  return localStorage.getItem(AUTH_TOKEN_KEY) !== null
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isAuthenticated, setIsAuthenticated] = useState(hasStoredToken)
 
-  return (
-    <>
-      <h1>Get started</h1>
-    </>
-  )
+  function handleLoginSuccess(token: string) {
+    localStorage.setItem(AUTH_TOKEN_KEY, token)
+    setIsAuthenticated(true)
+  }
+
+  return <AppRouter isAuthenticated={isAuthenticated} onLoginSuccess={handleLoginSuccess} />
 }
 
 export default App
